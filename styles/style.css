@@ -1,0 +1,12 @@
+@import url(reset.css);
+@import url(header.css);
+
+:root {
+    --offwhite: #d9d9db;
+    --weirdbrown: #b7ae8f;
+    --primaryfont: "Roboto";
+}
+ body{
+    background-color: var(--offwhite);
+    font-family: var(--primaryfont);
+ }
