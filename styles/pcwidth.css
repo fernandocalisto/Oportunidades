@@ -1,0 +1,16 @@
+@media (min-width: 768px) {
+
+    .body-text {
+        max-width: 800px;
+        margin: 3em auto;
+    }
+
+    .body-text .title {
+        font-size: 2.2rem;
+    }
+
+    .body-text .description-text {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+}

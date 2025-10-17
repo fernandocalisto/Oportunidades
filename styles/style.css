@@ -1,6 +1,7 @@
 @import url(reset.css);
 @import url(header.css);
 @import url(main.css);
+@import url(pcwidth.css);
 
 :root {
     --offwhite: #f7f7f7;
