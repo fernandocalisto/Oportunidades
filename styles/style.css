@@ -1,10 +1,11 @@
 @import url(reset.css);
 @import url(header.css);
+@import url(main.css);
 
 :root {
-    --offwhite: #d9d9db;
+    --offwhite: #f7f7f7;
     --weirdbrown: #b7ae8f;
-    --primaryfont: "Roboto";
+    --primaryfont: "Poppins";
 }
  body{
     background-color: var(--offwhite);

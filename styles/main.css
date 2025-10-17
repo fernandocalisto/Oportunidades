@@ -1,0 +1,36 @@
+.body-text {
+    margin: 3em 0.5em;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.title {
+    margin-bottom: 2rem;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    font-weight: 600;
+    
+}
+
+.title strong {
+    color: #003e83;
+}
+
+.description-text{
+    margin: 0 0.5em;
+}
+
+.body-btns {
+    display: flex;
+    justify-content: center;
+}
+
+.subscribe-btn {
+    text-transform: uppercase;
+    font-weight: 500;
+    text-decoration: none;
+    color: white;
+    padding: 1em;
+    background-color: #003e83;
+    border-radius: 8px;
+}
