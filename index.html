@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <title>+Oportunidades</title>
 </head>
+
 <body>
     <header class="header">
         <img src="/src/logo-wide.png" class="logo">
@@ -16,7 +20,10 @@
     </header>
     <section class="body-text">
         <h1 class="title">Seu futuro começa com <strong>+Oportunidades</strong></h1>
-        <p class="description-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pellentesque vehicula mi, et hendrerit velit. Duis vitae pharetra enim. Integer maximus lorem at volutpat iaculis. Praesent faucibus enim nec laoreet iaculis. Sed scelerisque efficitur enim, ac suscipit ligula dictum in. Curabitur pretium varius tellus non hendrerit. Integer nec felis nunc.</p>
+        <p class="description-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pellentesque vehicula
+            mi, et hendrerit velit. Duis vitae pharetra enim. Integer maximus lorem at volutpat iaculis. Praesent
+            faucibus enim nec laoreet iaculis. Sed scelerisque efficitur enim, ac suscipit ligula dictum in. Curabitur
+            pretium varius tellus non hendrerit. Integer nec felis nunc.</p>
     </section>
     <section class="body-btns">
         <a href="#" class="subscribe-btn">Inscreva-se</a>
@@ -27,27 +34,118 @@
             <li class="item-list">
                 <img src="/src/chapeu-de-graduacao.png" class="item-list-img">
                 <h3 class="item-list-title">Aprendizado prático e acessível</h3>
-                <p class="item-list-text">Cursos com foco em habilidades reais do mercado, explicados de forma simples e gratuita para todos.</p>
+                <p class="item-list-text">Cursos com foco em habilidades reais do mercado, explicados de forma simples e
+                    gratuita para todos.</p>
             </li>
             <li class="item-list">
                 <img src="/src/usuarios-alt.png" class="item-list-img">
                 <h3 class="item-list-title">Conexão com a comunidade</h3>
-                <p class="item-list-text">Participe de uma rede local de alunos, mentores e profissionais que se ajudam e crescem juntos.</p>
+                <p class="item-list-text">Participe de uma rede local de alunos, mentores e profissionais que se ajudam
+                    e crescem juntos.</p>
             </li>
             <li class="item-list">
                 <img src="/src/pasta.png" class="item-list-img">
                 <h3 class="item-list-title">Preparação para o mercado de trabalho</h3>
-                <p class="item-list-text">Aulas que desenvolvem competências valorizadas por empresas — do currículo à prática profissional.</p>
+                <p class="item-list-text">Aulas que desenvolvem competências valorizadas por empresas — do currículo à
+                    prática profissional.</p>
             </li>
             <li class="item-list">
                 <img src="/src/dolar.png" class="item-list-img">
                 <h3 class="item-list-title">Custo zero, oportunidade total</h3>
-                <p class="item-list-text">Educação de qualidade sem mensalidades ou taxas. Basta força de vontade para começar!</p>
+                <p class="item-list-text">Educação de qualidade sem mensalidades ou taxas. Basta força de vontade para
+                    começar!</p>
             </li>
         </ul>
     </section>
+    <section class="form-section">
+        <h2 class="form-title">Cadastro</h2>
+        <form id="cadastroForm" class="form-cadastro" action="https://script.google.com/macros/s/AKfycbzM2rWVBkiq8VsddxsBbnwpQVrOkBG2y2e0Um_21woPzDPjFpV6JgR967EH6YE0t6Mk/exec" method="post"
+            target="hidden_iframe" onsubmit="return validarFormulario()">
+
+            <label for="nome">Nome completo:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="cpf">CPF:</label>
+            <input type="text" id="cpf" name="cpf" required>
+
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="endereco" name="endereco" required>
+
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" required>
+
+            <label for="data-nascimento">Data de nascimento:</label>
+            <input type="date" id="data-nascimento" name="data-nascimento" required>
+
+            <button type="submit" class="btn-enviar">Enviar cadastro</button>
+
+            <p id="mensagem" class="mensagem"></p>
+        </form>
+
+        <!-- iframe escondido -->
+        <iframe name="hidden_iframe" style="display:none;" onload="iframeCarregado()"></iframe>
+
+        <script>
+            const mensagem = document.getElementById("mensagem");
+            let formularioEnviado = false;
+
+            function validarFormulario() {
+                mensagem.textContent = "";
+                mensagem.style.color = "red";
+
+                const cpf = document.getElementById("cpf").value.trim();
+                const telefone = document.getElementById("telefone").value.trim();
+
+                // Validações básicas
+                if (!/^\d{11}$/.test(cpf)) {
+                    mensagem.textContent = "❌ CPF inválido. Digite 11 números.";
+                    return false;
+                }
+
+                if (!/^\d{10,11}$/.test(telefone)) {
+                    mensagem.textContent = "❌ Telefone inválido. Digite 10 ou 11 números.";
+                    return false;
+                }
+
+                // Se passou nas validações, permite o envio
+                formularioEnviado = true;
+                return true;
+            }
+
+            // Função chamada quando o iframe recebe a resposta do Apps Script
+            function iframeCarregado() {
+                if (!formularioEnviado) return;
+
+                const iframe = document.querySelector("iframe[name='hidden_iframe']");
+                let resposta = "";
+
+                try {
+                    resposta = iframe.contentDocument.body.innerText.trim();
+                } catch (e) {
+                    resposta = "ok"; // fallback
+                }
+
+                if (resposta === "duplicado") {
+                    mensagem.textContent = "⚠️ Este CPF já foi cadastrado!";
+                    mensagem.style.color = "orange";
+                } else if (resposta === "ok") {
+                    mensagem.textContent = "✅ Cadastro enviado com sucesso!";
+                    mensagem.style.color = "green";
+                    document.getElementById("cadastroForm").reset();
+                } else {
+                    mensagem.textContent = "❌ Erro ao enviar cadastro. Tente novamente.";
+                }
+
+                formularioEnviado = false;
+            }
+        </script>
+
+
+    </section>
+
     <footer>
 
     </footer>
 </body>
+
 </html>
