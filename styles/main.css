@@ -23,6 +23,7 @@
 .body-btns {
     display: flex;
     justify-content: center;
+    gap: 2em;
 }
 
 .subscribe-btn {
