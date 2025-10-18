@@ -14,3 +14,7 @@
     background-color: var(--offwhite);
     font-family: var(--primaryfont);
  }
+
+ html {
+    scroll-behavior: smooth;
+ }
